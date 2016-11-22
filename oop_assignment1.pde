@@ -1,42 +1,52 @@
+/* 
+  Object Oriented Programming
+  DT282/2 Group E
+  C15423602 Sylvia Siu Wei Wan
+*/
+
 void setup()
 {
   size(1000, 600);
-  background(#626262);
   smooth();
 }
 
 int[] shootX = new int[50];
 int[] shootY = new int[50];
+
 int METEOR_SIZE = 10; // initial size when it first appears
 float meteorSize = METEOR_SIZE; // size as it fades
  
 // distance a shooting star moves each frame - varies with each new shooting star
-float ssDeltaX, ssDeltaY; 
-// -1 indicates no shooting star, this is used to fade out the star
-int ssTimer = -1;
-// starting point of a new shooting star, picked randomly
+float sDeltaX, sDeltaY; 
+int sTimer = -1;
+
+// random points of a new star
 int startX,startY;
  
-void draw() {
-  background(0); // dark blue night sky
+void draw()
+{
+  
+  background(0);
 
-  // draw the shooting star (if any)
-  for (int i = 0; i < shootX.length-1; i++) 
+  // drawing the stars
+  for (int i=0; i<shootX.length-1; i++) 
   {
-    int shooterSize = max(0,int(meteorSize*i/shootX.length));
+    int shootSize = max(0, int(meteorSize*i/shootX.length));
+    
     // to get the tail to disappear need to switch to noStroke when it gets to 0
-    if (shooterSize > 0) 
+    if (shootSize>0) 
     {
-      strokeWeight(shooterSize);
+      strokeWeight(shootSize);
       stroke(255);
     }
+    
     else
       noStroke();
       line(shootX[i], shootY[i], shootX[i+1], shootY[i+1]);
-      //ellipse(shootX[i], shootY[i], meteorSize*i/shootX.length,meteorSize*i/shootX.length);
+      ellipse(shootX[i], shootY[i], meteorSize*i/shootX.length,meteorSize*i/shootX.length);
   }
   
-  meteorSize*=0.9; // shrink the shooting star as it fades
+  meteorSize *= 0.9; // shrink the shooting star as it fades
  
   // move the shooting star along it's path
   for (int i = 0; i < shootX.length-1; i++)
@@ -46,20 +56,20 @@ void draw() {
   }
  
   // add the new points into the shooting star as long as it hasn't burnt out
-  if (ssTimer >= 0 && ssTimer < shootX.length)
+  if (sTimer >= 0 && sTimer < shootX.length)
   {
-    shootX[shootX.length-1] = int(startX + ssDeltaX*(ssTimer));
-    shootY[shootY.length-1] = int(startY + ssDeltaY*(ssTimer));
-    ssTimer++;
+    shootX[shootX.length-1] = int(startX + sDeltaX*(sTimer));
+    shootY[shootY.length-1] = int(startY + sDeltaY*(sTimer));
+    sTimer++;
     
-    if (ssTimer >= shootX.length)
+    if (sTimer >= shootX.length)
     {
-      ssTimer = -1; // end the shooting star
+      sTimer = -1; // end the shooting star
     }
   }
  
   // create a new shooting star with some random probability
-  if (random(5) < 1 && ssTimer == -1) 
+  if (random(5) < 1 && sTimer == -1) 
   {
     newShootingStar();
   }
@@ -75,10 +85,11 @@ void newShootingStar()
   startY = (int)random(height);
   endX = (int)random(width);
   endY = (int)random(height);
-  ssDeltaX = (endX - startX)/(float)(shootX.length);
-  ssDeltaY = (endY - startY)/(float)(shootY.length);
-  ssTimer = 0; // starts the timer which ends when it reaches shootX.length
+  sDeltaX = (endX - startX)/(float)(shootX.length);
+  sDeltaY = (endY - startY)/(float)(shootY.length);
+  sTimer = 0; // starts the timer which ends when it reaches shootX.length
   meteorSize = METEOR_SIZE;
+  
   // by filling the array with the start point all lines will essentially form a point initialy
   for (int i = 0; i < shootX.length; i++)
   {

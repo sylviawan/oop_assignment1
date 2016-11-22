@@ -1,0 +1,13 @@
+How to draw a line
+
+size(500, 500);
+background(255, 0, 0);	//Fills the whole screen with that colour
+stroke(255, 0, 0);	//basically the outline colour value
+			//multiple values mean RGB
+fill(255, 0, 100); 	//Fill in the shape
+line(10, 10, 50, 50); <— co ordinates for start and end points
+ellipse(100, 100, 50, 50);	//cx, cy, width, height
+rect( 30, 100, 10, 10); 	//TL, TR, width, height
+point(50, 50); 		//x,y
+triangle(100, 200, 200, 50, 300, 250);	//vertices
+arc(50, 50, 100, 100, 0, HALF_PI);

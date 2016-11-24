@@ -25,7 +25,12 @@ int startX,startY;
  
 void draw()
 {
-  
+ shootingstar();
+}
+
+void shootingstar()
+{
+   
   background(0);
 
   // drawing the stars

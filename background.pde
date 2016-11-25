@@ -11,7 +11,7 @@ class background
   float sDeltaX, sDeltaY; 
   int sTimer = -1;
 
-  // random points of a new star
+   //random points of a new star
   int startX, startY;
 
   // variables for circles
@@ -92,9 +92,9 @@ class background
 
   void circlePiece() 
   {
-    
+
     noFill();
-    stroke(245, 52, 95);
+    stroke(195, 45, 225);
 
     strokeWeight(4);
 
@@ -110,17 +110,26 @@ class background
     strokeWeight(5);
     arc(0, 0, 345, 345, HALF_PI, PI);
 
-    strokeWeight(20);
+    strokeWeight(15);
     arc(0, 0, 365, 365, PI+QUARTER_PI, TWO_PI);
 
     rotate(radians(angle2));
     angle2 -= speed2;
     strokeWeight(2);
     arc(0, 0, 395, 395, 0, HALF_PI);
-    
+
     popMatrix();
 
 
     ellipse(width/2, height/2, 150, 150);
+
+    fill(195, 45, 225);
+    ellipse(width/2, height/2, 100, 100);
+
+    fill(0);
+    textSize(15);
+    text("You stupid", width/2-40, height/2);
   }
+  
+
 }

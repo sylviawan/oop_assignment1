@@ -19,7 +19,7 @@ void setup()
   bg = new background();
   btn = new Button(this);
   
-  size(1000, 600);
+  size(1000, 600, P3D);
   smooth();
   
   for (int i = 0; i < 5; i++) {
@@ -36,11 +36,9 @@ void draw()
    for(Vertex v : vertexes) {
     v.draw();
   }
-
+  bg.polygonDesign();
   btn.button1(0);
   bg.circlePiece();
-
-  bg.polygonDesign();
   //btn.button2();
   // bg.shootingstar();
 }

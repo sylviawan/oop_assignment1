@@ -1,6 +1,6 @@
-class Vertex {
-  
-   
+class Vertex
+{
+ 
   public PVector position;
   public float size;
   public ArrayList<Vertex> connections = new ArrayList<Vertex>();

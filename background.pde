@@ -18,6 +18,10 @@ class background
   float angle2 = 0;
   float speed1= 1;
   float speed2= 2;
+  
+      float speed = 2;
+    float angleOfSphere;
+    int speedOfSphere = 2;
 
 
   void shootingstar()
@@ -134,24 +138,41 @@ class background
     text("You stupid", width/2-40, height/2);  
   }
   
-  void hexagon() {
-  polygon(50, 50, 70, 7);  // Heptagon
-
+  void hexagon()
+  {
+    polygon(50, 50, 70, 7);  // Heptagon
   }
   
-  void polygonDesign(){
+  void polygonDesign()
+  {
     polygon(800, 100, 70, 6);  // Heptagon
+    
+    fill(24, 57,200);
+    stroke(69, 298, 208);
+    pushMatrix();
+    translate(790, 100);
+    rotateX(radians(angleOfSphere));
+    rotateY(radians(angleOfSphere));
+    angleOfSphere +=speedOfSphere;
+    stroke(color(69, 298, 208));
+    sphereDetail(20);
+    sphere(40);
+    popMatrix();
+    noFill();
   }
   
-  void polygon(float x, float y, float radius, int npoints) {
-  float angle = TWO_PI / npoints;
-  beginShape();
-  for (float a = 0; a < TWO_PI; a += angle) {
-    float sx = x + cos(a) * radius;
-    float sy = y + sin(a) * radius;
-    vertex(sx, sy);
+  void polygon(float x, float y, float radius, int npoints) 
+  {
+    float angle = TWO_PI / npoints;
+    beginShape();
+    
+    for (float a = 0; a < TWO_PI; a += angle)
+    {
+      float sx = x + cos(a) * radius;
+      float sy = y + sin(a) * radius;
+      vertex(sx, sy);
+    }
+    endShape(CLOSE);
   }
-  endShape(CLOSE);
-}
 
 }

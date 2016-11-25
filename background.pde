@@ -97,6 +97,9 @@ class background
     stroke(255);
 
     strokeWeight(4);
+    
+    rect(20, 380, 200, 200);
+    println(mouseX, mouseY);
 
     pushMatrix();
 

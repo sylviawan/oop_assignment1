@@ -8,7 +8,7 @@
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
-ArrayList<Vertex> vertexes = new ArrayList<Vertex>();
+public ArrayList<Vertex> vertexes = new ArrayList<Vertex>();
 
 
 background bg;
@@ -17,26 +17,16 @@ Button btn;
 void setup()
 {
   bg = new background();
-  btn = new Button();
+  btn = new Button(this);
   
   size(1000, 600);
   smooth();
   
-    for (int i = 0; i < 5; i++) {
+  for (int i = 0; i < 5; i++) {
     addRandomVertex();
   }
   
-  for(Vertex v : vertexes) {
-    int connections = ThreadLocalRandom.current().nextInt(1, 3);
-    for(int i = 0; i < connections; i++) {
-      Vertex randomVertex = vertexes.get(ThreadLocalRandom.current().nextInt(0, vertexes.size()-1));
-      
-      if (randomVertex == v) continue;
-      
-      v.connections.add(randomVertex);
-    }
-    
-  }
+  connectVertices();
 }
 
 void draw()
@@ -59,6 +49,20 @@ void mousePressed()
    btn.button1(1);
 }
 
-void addRandomVertex() {
-  vertexes.add(new Vertex(new PVector(ThreadLocalRandom.current().nextInt(0, 100), ThreadLocalRandom.current().nextInt(height - 100, height))));
+public void connectVertices() {
+   for(Vertex v : vertexes) {
+    int connections = ThreadLocalRandom.current().nextInt(1, 3);
+    for(int i = 0; i < connections; i++) {
+      Vertex randomVertex = vertexes.get(ThreadLocalRandom.current().nextInt(0, vertexes.size()-1));
+      
+      if (randomVertex == v) continue;
+      
+      v.connections.add(randomVertex);
+    }
+    
+  } 
+}
+
+public void addRandomVertex() {
+  vertexes.add(new Vertex(new PVector(ThreadLocalRandom.current().nextInt(40, 200), ThreadLocalRandom.current().nextInt(height - 200, height-40))));
 }

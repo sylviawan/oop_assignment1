@@ -1,3 +1,5 @@
+
+
 // the tail of the shooting star
 int[] shootX = new int[50];
 int[] shootY = new int[50];

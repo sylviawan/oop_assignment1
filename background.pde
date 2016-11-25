@@ -1,6 +1,5 @@
 class background
 {
-
   int[] shootX = new int[50];
   int[] shootY = new int[50];
 
@@ -20,9 +19,9 @@ class background
   float speed1= 1;
   float speed2= 2;
 
+
   void shootingstar()
   {
-
     // drawing the stars
     for (int i=0; i<shootX.length-1; i++) 
     {
@@ -93,9 +92,9 @@ class background
 
   void circlePiece() 
   {
-
+    
     noFill();
-    stroke(195, 45, 225);
+    stroke(255);
 
     strokeWeight(4);
 
@@ -129,10 +128,10 @@ class background
 
     fill(0);
     textSize(15);
-    text("You stupid", width/2-40, height/2);
-    
-    
+    text("You stupid", width/2-40, height/2);  
   }
+  
+
   
 
 }

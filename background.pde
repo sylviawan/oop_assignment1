@@ -33,10 +33,11 @@ class background
       {
         strokeWeight(shootSize);
         stroke(255);
-      } else
+      }
+      else
         noStroke();
-      line(shootX[i], shootY[i], shootX[i+1], shootY[i+1]);
-      ellipse(shootX[i], shootY[i], meteorSize*i/shootX.length, meteorSize*i/shootX.length);
+        line(shootX[i], shootY[i], shootX[i+1], shootY[i+1]);
+        ellipse(shootX[i], shootY[i], meteorSize*i/shootX.length, meteorSize*i/shootX.length);
     }
 
     meteorSize *= 0.9; // shrink the shooting star as it fades
@@ -129,6 +130,8 @@ class background
     fill(0);
     textSize(15);
     text("You stupid", width/2-40, height/2);
+    
+    
   }
   
 

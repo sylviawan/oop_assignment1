@@ -134,7 +134,24 @@ class background
     text("You stupid", width/2-40, height/2);  
   }
   
+  void hexagon() {
+  polygon(50, 50, 70, 7);  // Heptagon
 
+  }
   
+  void polygonDesign(){
+    polygon(800, 100, 70, 6);  // Heptagon
+  }
+  
+  void polygon(float x, float y, float radius, int npoints) {
+  float angle = TWO_PI / npoints;
+  beginShape();
+  for (float a = 0; a < TWO_PI; a += angle) {
+    float sx = x + cos(a) * radius;
+    float sy = y + sin(a) * radius;
+    vertex(sx, sy);
+  }
+  endShape(CLOSE);
+}
 
 }

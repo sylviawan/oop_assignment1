@@ -40,6 +40,7 @@ void draw()
   btn.button1(0);
   bg.circlePiece();
 
+  bg.polygonDesign();
   //btn.button2();
   // bg.shootingstar();
 }

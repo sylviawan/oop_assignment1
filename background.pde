@@ -16,8 +16,8 @@ class background
   // variables for circles
   float angle1 = 0;
   float angle2 = 0;
-  float speed1= 1;
-  float speed2= 2;
+  float speed1= 0.5;
+  float speed2= 1;
   
   // variables for sphere thingy
   float speed = 2;
@@ -128,15 +128,15 @@ class background
 
     popMatrix();
 
-
     ellipse(width/2, height/2, 150, 150);
 
-    fill(195, 45, 225);
-    ellipse(width/2, height/2, 100, 100);
+    fill(195, 165, 225);
+    noStroke();
+    ellipse(width/2, height/2, 140, 140);
 
-    fill(0);
-    textSize(15);
-    text("You stupid", width/2-40, height/2);  
+    //fill(0);
+    //textSize(15);
+    //text("You stupid", width/2-40, height/2);  
   }
   
   void hexagon()
@@ -175,6 +175,13 @@ class background
     }
     
     endShape(CLOSE);
+  }
+  
+  void sometext()
+  {
+    fill(102, 153, 51);
+    textSize(12);
+    text("New constellation", 85, 340);
   }
 
 }

@@ -5,12 +5,12 @@ class radio
   float startY;
   boolean overBox = false;
   boolean locked = false;
-  int boxSize=15;
+  int boxSize = 15;
 
   radio(float x, float y)
   {
-    this.startX=x;
-    this.startY=y;
+    this.startX = x;
+    this.startY = y;
   }
 
   void display()
@@ -24,8 +24,8 @@ class radio
       
       if (!locked)
       { 
-        stroke(#6FDDEA); 
-        fill(#6FDDEA);
+        stroke(195, 165, 225); 
+        fill(195, 165, 225);
       }
     } 
     else

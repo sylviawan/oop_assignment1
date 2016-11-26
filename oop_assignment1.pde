@@ -2,6 +2,7 @@
  Object Oriented Programming
  DT282/2 Group E
  C15423602 Sylvia Siu Wei Wan
+ 
  */
 
 
@@ -26,7 +27,7 @@ void setup()
 {
   bg = new background();
   btn = new Button(this);
-  timeClock = new clock();
+  timeClock = new clock(20, 500, 450);
 
   size(1100, 600, P3D);
   smooth();
@@ -38,31 +39,35 @@ void setup()
 
   connectVertices();
 
+  // radio blocks
   for (int i=0; i<18; i++)
   {
     blocks[i] = new radio(radposx, radposy);
-    radposx+=8;
+    radposx += 8;
   }
-  
 }
 
 void draw()
 {
   background(0);
 
-  for (Vertex v : vertexes) {
+  // constellations 
+  for (Vertex v : vertexes) 
+  {
     v.draw();
   }
-  
+
+  // blocks
   for (int i=0; i<18; i++)
   {
     blocks[i].display();
   }
-  
+
   bg.polygonDesign();
   btn.button1(0);
   bg.circlePiece();
-  
+  bg.sometext();
+
   timeClock.getTime();
   timeClock.display();
 

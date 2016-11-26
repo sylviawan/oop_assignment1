@@ -5,22 +5,25 @@ class Button
   {
     this.t = t;
   }
-  
-  
+
+
   void button1(int i)
   {
-    float d = dist(85, 50, mouseX, mouseY);
-    ellipse(85, 50, 50, 50);
- 
-    if (i == 1 && d < 50 )
-     {
-        t.vertexes.clear();
-          for (int j = 0; j < 5; j++) 
-          {
-            addRandomVertex();
-          }
-        t.connectVertices();
-     }
-   } 
-  
+    
+    
+    float d = dist(75, 300, mouseX, mouseY);
+    ellipse(75, 300, 40, 40);
+
+    if (i == 1 && d < 40 )
+    {
+      t.vertexes.clear();
+
+      for (int j = 0; j < 5; j++) 
+      {
+        addRandomVertex();
+      }
+
+      t.connectVertices();
+    }
+  }
 }

@@ -13,6 +13,7 @@ public ArrayList<Vertex> vertexes = new ArrayList<Vertex>();
 
 background bg;
 Button btn;
+clock timeClock;
 
 // global variables
 radio[] blocks = new radio[18];
@@ -25,8 +26,9 @@ void setup()
 {
   bg = new background();
   btn = new Button(this);
+  timeClock = new clock();
 
-  size(1000, 600, P3D);
+  size(1100, 600, P3D);
   smooth();
 
   for (int i = 0; i < 5; i++) 
@@ -60,8 +62,11 @@ void draw()
   bg.polygonDesign();
   btn.button1(0);
   bg.circlePiece();
+  
+  timeClock.getTime();
+  timeClock.display();
 
-  bg.shootingstar();
+  //bg.shootingstar();
 }
 
 void mousePressed()

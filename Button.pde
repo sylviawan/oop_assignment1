@@ -1,7 +1,8 @@
 class Button
 {
   oop_assignment1 t;
-  Button(oop_assignment1 t) {
+  Button(oop_assignment1 t) 
+  {
     this.t = t;
   }
   
@@ -14,7 +15,8 @@ class Button
     if (i == 1 && d < 50 )
      {
         t.vertexes.clear();
-          for (int j = 0; j < 5; j++) {
+          for (int j = 0; j < 5; j++) 
+          {
             addRandomVertex();
           }
         t.connectVertices();

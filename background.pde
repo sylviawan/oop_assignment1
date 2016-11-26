@@ -10,7 +10,7 @@ class background
   float sDeltaX, sDeltaY; 
   int sTimer = -1;
 
-   //random points of a new star
+  // random points of a new star
   int startX, startY;
 
   // variables for circles
@@ -19,9 +19,10 @@ class background
   float speed1= 1;
   float speed2= 2;
   
-      float speed = 2;
-    float angleOfSphere;
-    int speedOfSphere = 2;
+  // variables for sphere thingy
+  float speed = 2;
+  float angleOfSphere;
+  int speedOfSphere = 1;
 
 
   void shootingstar()
@@ -172,6 +173,7 @@ class background
       float sy = y + sin(a) * radius;
       vertex(sx, sy);
     }
+    
     endShape(CLOSE);
   }
 

@@ -1,5 +1,6 @@
 class radio
 {
+  
   float startX;
   float startY;
   boolean overBox = false;
@@ -19,7 +20,8 @@ class radio
     // Test if the cursor is over the box 
     if (mouseX > startX-boxSize && mouseX < startX+boxSize && mouseY > startY-boxSize && mouseY < startY+boxSize)
     {
-      overBox = true;  
+      overBox = true;
+      
       if (!locked)
       { 
         stroke(#6FDDEA); 

@@ -139,25 +139,30 @@ class background
     //text("You stupid", width/2-40, height/2);  
   }
   
-  void hexagon()
-  {
-    polygon(50, 50, 70, 7);  // Heptagon
-  }
+  //void hexagon()
+  //{
+  //  polygon(50, 50, 70, 7);  // Heptagon
+  //}
   
   void polygonDesign()
   {
-    polygon(800, 100, 70, 6);  // Heptagon
     
-    fill(24, 57,200);
-    stroke(69, 298, 208);
+    polygon(800, 100, 70, 6); 
+    
+    fill(195, 165, 225);
+    stroke(195, 165, 225);
+    
     pushMatrix();
-    translate(790, 100);
+    
+    translate(width/2, height/2);
     rotateX(radians(angleOfSphere));
     rotateY(radians(angleOfSphere));
     angleOfSphere +=speedOfSphere;
-    stroke(color(69, 298, 208));
+    
+    stroke(color(255));
     sphereDetail(20);
     sphere(40);
+    
     popMatrix();
     noFill();
   }

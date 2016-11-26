@@ -14,20 +14,20 @@ public ArrayList<Vertex> vertexes = new ArrayList<Vertex>();
 
 background bg;
 Button btn;
-clock timeClock;
+DigitalClock digitalClock;
 
 // global variables
 radio[] blocks = new radio[18];
 
 //radio position
-float radposx=710;
-float radposy=300;
+float radposx = 750;
+float radposy = 300;
 
 void setup()
 {
   bg = new background();
   btn = new Button(this);
-  timeClock = new clock(20, 500, 450);
+  digitalClock = new DigitalClock(20, 500, 450);
 
   size(1100, 600, P3D);
   smooth();
@@ -68,8 +68,8 @@ void draw()
   bg.circlePiece();
   bg.sometext();
 
-  timeClock.getTime();
-  timeClock.display();
+  digitalClock.getTime();
+  digitalClock.display();
 
   //bg.shootingstar();
 }

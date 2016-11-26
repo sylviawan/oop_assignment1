@@ -1,35 +1,35 @@
-class clock extends time
+class DigitalClock extends Clock
 {
   int fontSize;
   float x, y;
   
-  clock(int font_size, float tx, float ty)
+  DigitalClock(int _fontSize, float _x, float _y) 
   {
-    fontSize = font_size;
-    x = tx;
-    x = ty;
+    fontSize = _fontSize;
+    x = _x;
+    y = _y;
   }
   
-  void getTime()
+  void getTime() 
   {
     super.getTime();
   }
   
   void display()
   {
-    fill(255);
+    fill(195, 165, 225);
     textSize(fontSize);
     textAlign(CENTER);
     text (h + ":" + nf(m, 2) + ":" + nf(s, 2), x, y);
-  }
-    
-  
+  } 
 }
-class time {
+
+class Clock 
+{
   int h, m, s;
- time()
- {
-  }
+  //Clock() 
+  //{
+  //}
   
   void getTime() 
   {

@@ -147,7 +147,7 @@ class background
   void polygonDesign()
   {
     
-    polygon(800, 100, 70, 6); 
+    polygon(100, 100, 70, 6); 
     
     fill(195, 165, 225);
     stroke(195, 165, 225);
@@ -184,7 +184,7 @@ class background
   
   void sometext()
   {
-    fill(102, 153, 51);
+    fill(195, 165, 225);
     textSize(12);
     text("New constellation", 85, 340);
   }

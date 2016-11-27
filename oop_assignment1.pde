@@ -27,7 +27,7 @@ void setup()
 {
   bg = new background();
   btn = new Button(this);
-  digitalClock = new DigitalClock(20, 500, 450);
+  digitalClock = new DigitalClock(20, 100, 200);
 
   size(1100, 600, P3D);
   smooth();

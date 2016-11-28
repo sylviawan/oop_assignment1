@@ -5,6 +5,7 @@ class radar {
     float theta = 0;
     float cx, cy;
     float radius = 100;
+    
   void miniRadar() 
   {
     

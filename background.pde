@@ -49,6 +49,9 @@ class background
     fill(195, 165, 225);
     noStroke();
     ellipse(width/2, height/2, 230, 230);
+    
+    fill(255);
+    text("Bish, holla at yo girl", width/2-20, height/2);
   }
 
 
@@ -64,11 +67,6 @@ class background
     stroke(255);
 
     rect(880, 400, 150, 160);
-
-    fill(195, 165, 225);
-    noStroke();
-    polygon(100, 100, 70, 6); 
-
 
     pushMatrix();
 
@@ -105,24 +103,8 @@ class background
     textSize(12);
     text("New constellation", 85, 340);
   }
-  
-  float[] x = new float[100];
-float[] y = new float[100];
-float[] speed_1 = new float[100];
-
-  void setupStars()
-  {
-    
-    int i = 0;
-  while(i < 100) {  
-    x[i] = random(0, width);
-    y[i] = random(0, height);
-    speed_1[i] = random(1, 3);
-    i = i + 1;
-  }
-  
+ 
      
   }
   
   
-  }

@@ -8,6 +8,7 @@
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
+import processing.sound.*;
 
 //classes
 public ArrayList<Vertex> vertexes = new ArrayList<Vertex>();
@@ -17,21 +18,31 @@ Button btn;
 DigitalClock digitalClock;
 radar rdr;
 
+//background music
+SoundFile sound;
+
 
 // global variables
 radio[] blocks = new radio[18];
 
 //radio position
-float radposx = 800;
-float radposy = 300;
+float radposx = 100;
+float radposy = 150;
 
 
- float[] x = new float[100];
+float[] x = new float[100];
 float[] y = new float[100];
 float[] speed_1 = new float[100];
 
 void setup()
 {
+  
+  //initializing sound file
+  
+  //find a mp3 file which sounds like space music, create a data folder where your project is stored and store the 
+  //mp3 file there, then change the filename.mp3 below to the actual name of the file with the extension
+  
+  sound = new SoundFile(this, "moon.mp3");
   
   bg = new background();
   btn = new Button(this);

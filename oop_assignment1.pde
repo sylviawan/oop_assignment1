@@ -16,7 +16,7 @@ background bg;
 Button btn;
 DigitalClock digitalClock;
 radar rdr;
-open opn;
+
 
 // global variables
 radio[] blocks = new radio[18];
@@ -27,11 +27,12 @@ float radposy = 300;
 
 void setup()
 {
+  
   bg = new background();
   btn = new Button(this);
   digitalClock = new DigitalClock(20, 950, 550);
   rdr = new radar();
-  opn = new open();
+
 
   size(1100, 600, P3D);
   smooth();
@@ -49,15 +50,12 @@ void setup()
     blocks[i] = new radio(radposx, radposy);
     radposx += 8;
   }
-  
 }
 
 void draw()
 {
   background(0);
 
-  //opn.shootingstar();
-  
 
   // constellations 
   for (Vertex v : vertexes) 
@@ -77,13 +75,11 @@ void draw()
   bg.sometext();
 
 
-  
+
   rdr.miniRadar();
   
   digitalClock.getTime();
   digitalClock.display();
-
-
 }
 
 void mousePressed()

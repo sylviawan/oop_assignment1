@@ -6,10 +6,8 @@ class Button
     this.t = t;
   }
 
-
   void button1(int i)
   {
-    
     
     float d = dist(75, 300, mouseX, mouseY);
     ellipse(75, 300, 40, 40);

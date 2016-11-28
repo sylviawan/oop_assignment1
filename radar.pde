@@ -1,15 +1,13 @@
-class radar
-{
+class radar {
 
-  void miniRadar()
-  {
-
-    float speed = 0.01;
+  float speed = 0.01;
     int trailLength = 50;  
     float theta = 0;
     float cx, cy;
     float radius = 100;
-
+  void miniRadar() 
+  {
+    
     cx = 900;
     cy = 150;
     smooth();
@@ -19,7 +17,7 @@ class radar
     ellipse(cx, cy, radius * 2, radius * 2);
 
     float intensityChange = 255.0f / trailLength;
-    for (int i = 0; i < trailLength; i ++)
+    for (int i = 0; i < trailLength; i ++) 
     {
       float lineTheta = theta - (i * speed);
       stroke(200, 255 - (i * intensityChange), 190);
@@ -30,4 +28,5 @@ class radar
 
     theta += speed;
   }
+  
 }

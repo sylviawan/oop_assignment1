@@ -4,8 +4,8 @@ class background
   // variables for circles
   float angle1 = 0;
   float angle2 = 0;
-  float speed1= 0.5;
-  float speed2= 1;
+  float speed1 = 0.5;
+  float speed2 = 1;
 
   // variables for sphere thingy
   float speed = 2;
@@ -36,38 +36,40 @@ class background
     arc(0, 0, 345, 345, HALF_PI, PI);
 
     strokeWeight(15);
-    arc(0, 0, 365, 365, PI+QUARTER_PI, TWO_PI);
+    arc(0, 0, 270, 270, PI+QUARTER_PI, TWO_PI);
 
     rotate(radians(angle2));
     angle2 -= speed2;
-    strokeWeight(2);
+    strokeWeight(15);
     arc(0, 0, 395, 395, 0, HALF_PI);
 
     popMatrix();
 
+    strokeWeight(1);
     fill(195, 165, 225);
     noStroke();
     ellipse(width/2, height/2, 230, 230);
-
-
-
   }
 
 
   void polygonDesign()
   {
 
-    
+    rect(60, 138, 204, 24);
+    fill(0);
+    int fillX = ((frameCount%301) / 3 * 2);
+    rect(250, 140, fillX-200, 20);
+
     noFill();
     stroke(255);
 
     rect(880, 400, 150, 160);
-    
+
     fill(195, 165, 225);
     noStroke();
     polygon(100, 100, 70, 6); 
 
-    
+
     pushMatrix();
 
     translate(950, 450);
@@ -80,7 +82,6 @@ class background
     sphere(40);
 
     popMatrix();
-   
   }
 
   void polygon(float x, float y, float radius, int npoints) 

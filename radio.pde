@@ -1,6 +1,6 @@
 class radio
 {
-  
+
   float startX;
   float startY;
   boolean overBox = false;
@@ -21,14 +21,13 @@ class radio
     if (mouseX > startX-boxSize && mouseX < startX+boxSize && mouseY > startY-boxSize && mouseY < startY+boxSize)
     {
       overBox = true;
-      
+
       if (!locked)
       { 
         stroke(195, 165, 225); 
         fill(195, 165, 225);
       }
-    } 
-    else
+    } else
     {
       stroke(#3148C4);
       fill(#3148C4);

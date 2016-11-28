@@ -25,6 +25,11 @@ radio[] blocks = new radio[18];
 float radposx = 800;
 float radposy = 300;
 
+
+ float[] x = new float[100];
+float[] y = new float[100];
+float[] speed_1 = new float[100];
+
 void setup()
 {
   
@@ -33,6 +38,16 @@ void setup()
   digitalClock = new DigitalClock(20, 950, 550);
   rdr = new radar();
 
+ 
+ //setting up stars in background
+  int c = 0;
+  while(c < 100) {  
+    x[c] = random(0, width);
+    y[c] = random(0, height);
+    speed_1[c] = random(1, 3);
+    c = c + 1;
+  }
+  
 
   size(1100, 600, P3D);
   smooth();
@@ -57,6 +72,8 @@ void draw()
   background(0);
 
 
+  //rendering stars in the background
+  displayingStars();
   // constellations 
   for (Vertex v : vertexes) 
   {
@@ -107,4 +124,21 @@ public void connectVertices()
 public void addRandomVertex()
 {
   vertexes.add(new Vertex(new PVector(ThreadLocalRandom.current().nextInt(40, 200), ThreadLocalRandom.current().nextInt(height - 200, height-40))));
+}
+
+private void displayingStars()
+{
+  stroke(255);
+  strokeWeight(2);
+  
+  int c = 0;
+  while(c < 100) {
+    point(x[c], y[c]);
+  
+    x[c] = x[c] - speed_1[c];
+    if(x[c] < 0) {
+      x[c] = width;
+    }
+    c = c + 1;
+  }
 }

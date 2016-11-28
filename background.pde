@@ -54,11 +54,11 @@ class background
 
   void polygonDesign()
   {
-
-    rect(60, 138, 204, 24);
+     //weird moving bar
+    rect(60, 200, 204, 24);
     fill(0);
     int fillX = ((frameCount%301) / 3 * 2);
-    rect(250, 140, fillX-200, 20);
+    rect(250, 202, fillX-200, 20);
 
     noFill();
     stroke(255);
@@ -105,4 +105,24 @@ class background
     textSize(12);
     text("New constellation", 85, 340);
   }
-}
+  
+  float[] x = new float[100];
+float[] y = new float[100];
+float[] speed_1 = new float[100];
+
+  void setupStars()
+  {
+    
+    int i = 0;
+  while(i < 100) {  
+    x[i] = random(0, width);
+    y[i] = random(0, height);
+    speed_1[i] = random(1, 3);
+    i = i + 1;
+  }
+  
+     
+  }
+  
+  
+  }

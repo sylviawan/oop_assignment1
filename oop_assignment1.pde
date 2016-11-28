@@ -29,7 +29,7 @@ void setup()
 {
   bg = new background();
   btn = new Button(this);
-  digitalClock = new DigitalClock(20, 100, 200);
+  digitalClock = new DigitalClock(20, 950, 550);
   rdr = new radar();
   opn = new open();
 
@@ -56,7 +56,7 @@ void draw()
 {
   background(0);
 
-  opn.shootingstar();
+  //opn.shootingstar();
   
 
   // constellations 
@@ -75,12 +75,15 @@ void draw()
   btn.button1(0);
   bg.circlePiece();
   bg.sometext();
+
+
   
   rdr.miniRadar();
   
   digitalClock.getTime();
   digitalClock.display();
-  
+
+
 }
 
 void mousePressed()

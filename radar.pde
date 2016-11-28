@@ -22,12 +22,12 @@ class radar
     for (int i = 0; i < trailLength; i ++)
     {
       float lineTheta = theta - (i * speed);
-      stroke(0, 255 - (i * intensityChange), 0);
+      stroke(200, 255 - (i * intensityChange), 190);
       float x = cx + sin(lineTheta) * radius;
       float y = cy - cos(lineTheta) * radius;
       line(cx, cy, x, y);
     }
-    
+
     theta += speed;
   }
 }

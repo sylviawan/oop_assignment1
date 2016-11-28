@@ -15,12 +15,14 @@ public ArrayList<Vertex> vertexes = new ArrayList<Vertex>();
 background bg;
 Button btn;
 DigitalClock digitalClock;
+radar rdr;
+open opn;
 
 // global variables
 radio[] blocks = new radio[18];
 
 //radio position
-float radposx = 750;
+float radposx = 800;
 float radposy = 300;
 
 void setup()
@@ -28,6 +30,8 @@ void setup()
   bg = new background();
   btn = new Button(this);
   digitalClock = new DigitalClock(20, 100, 200);
+  rdr = new radar();
+  opn = new open();
 
   size(1100, 600, P3D);
   smooth();
@@ -45,11 +49,15 @@ void setup()
     blocks[i] = new radio(radposx, radposy);
     radposx += 8;
   }
+  
 }
 
 void draw()
 {
   background(0);
+
+  opn.shootingstar();
+  
 
   // constellations 
   for (Vertex v : vertexes) 
@@ -67,11 +75,12 @@ void draw()
   btn.button1(0);
   bg.circlePiece();
   bg.sometext();
-
+  
+  rdr.miniRadar();
+  
   digitalClock.getTime();
   digitalClock.display();
-
-  //bg.shootingstar();
+  
 }
 
 void mousePressed()

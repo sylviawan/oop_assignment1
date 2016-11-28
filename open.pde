@@ -1,4 +1,4 @@
-class background
+class open 
 {
   int[] shootX = new int[50];
   int[] shootY = new int[50];
@@ -18,12 +18,11 @@ class background
   float angle2 = 0;
   float speed1= 0.5;
   float speed2= 1;
-  
+
   // variables for sphere thingy
   float speed = 2;
   float angleOfSphere;
   int speedOfSphere = 1;
-
 
   void shootingstar()
   {
@@ -37,11 +36,10 @@ class background
       {
         strokeWeight(shootSize);
         stroke(255);
-      }
-      else
+      } else
         noStroke();
-        line(shootX[i], shootY[i], shootX[i+1], shootY[i+1]);
-        ellipse(shootX[i], shootY[i], meteorSize*i/shootX.length, meteorSize*i/shootX.length);
+      line(shootX[i], shootY[i], shootX[i+1], shootY[i+1]);
+      ellipse(shootX[i], shootY[i], meteorSize*i/shootX.length, meteorSize*i/shootX.length);
     }
 
     meteorSize *= 0.9; // shrink the shooting star as it fades
@@ -94,100 +92,4 @@ class background
       shootY[i] = startY;
     }
   }
-
-  void circlePiece() 
-  {
-    
-    noFill();
-    stroke(255);
-
-    strokeWeight(4);
-    
-    rect(20, 380, 200, 200);
-    println(mouseX, mouseY);
-
-    pushMatrix();
-
-    translate(width/2, height/2);
-    rotate(radians(angle1));
-    angle1 += speed1;
-
-    arc(width/2, height/2, 325, 325, 0, HALF_PI);
-    noFill();
-
-    strokeWeight(5);
-    arc(0, 0, 345, 345, HALF_PI, PI);
-
-    strokeWeight(15);
-    arc(0, 0, 365, 365, PI+QUARTER_PI, TWO_PI);
-
-    rotate(radians(angle2));
-    angle2 -= speed2;
-    strokeWeight(2);
-    arc(0, 0, 395, 395, 0, HALF_PI);
-
-    popMatrix();
-
-    ellipse(width/2, height/2, 150, 150);
-
-    fill(195, 165, 225);
-    noStroke();
-    ellipse(width/2, height/2, 140, 140);
-
-    //fill(0);
-    //textSize(15);
-    //text("You stupid", width/2-40, height/2);  
-  }
-  
-  //void hexagon()
-  //{
-  //  polygon(50, 50, 70, 7);  // Heptagon
-  //}
-  
-  void polygonDesign()
-  {
-    fill(195, 165, 225);
-    noStroke();
-    polygon(100, 100, 70, 6); 
-    
-    fill(195, 165, 225);
-    stroke(195, 165, 225);
-    
-    pushMatrix();
-    
-    translate(width/2, height/2);
-    rotateX(radians(angleOfSphere));
-    rotateY(radians(angleOfSphere));
-    angleOfSphere +=speedOfSphere;
-    
-    stroke(color(255));
-    sphereDetail(20);
-    sphere(40);
-    
-    popMatrix();
-    noFill();
-  }
-  
-  void polygon(float x, float y, float radius, int npoints) 
-  {
-    float angle = TWO_PI / npoints;
-    beginShape();
-    
-    for (float a = 0; a < TWO_PI; a += angle)
-    {
-      float sx = x + cos(a) * radius;
-      float sy = y + sin(a) * radius;
-      vertex(sx, sy);
-    }
-    
-    endShape(CLOSE);
-  }
-  
-  void sometext()
-  {
-    fill(195, 165, 225);
-    textSize(12);
-    text("New constellation", 85, 340);
-  }
-
 }

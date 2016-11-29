@@ -1,4 +1,5 @@
-class radar {
+class radar
+{
 
   float speed = 0.01;
   int trailLength = 50;  

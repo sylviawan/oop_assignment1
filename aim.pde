@@ -44,7 +44,8 @@ class aim
     keyCode = 'a'; //sets key back to null as the keycode will still be sotred in buffer
   }
 
-  void arrowKeys() {
+  void arrowKeys()
+  {
     stroke(255);
     if (keyCode == DOWN)
     {
@@ -54,6 +55,7 @@ class aim
     {
       noFill();
     }
+    
     rect(400, 525, 30, 30);
     if (keyCode == LEFT)
     {
@@ -63,6 +65,7 @@ class aim
     {
       noFill();
     }
+    
     rect(370, 525, 30, 30); 
     if (keyCode == RIGHT)
     {
@@ -72,6 +75,7 @@ class aim
     {
       noFill();
     }
+    
     rect(430, 525, 30, 30);  
     if (keyCode == UP)
     {

@@ -27,7 +27,8 @@ class radio
         stroke(195, 165, 225); 
         fill(195, 165, 225);
       }
-    } else
+    } 
+    else
     {
       stroke(#3148C4);
       fill(#3148C4);

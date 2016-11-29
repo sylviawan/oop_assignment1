@@ -1,5 +1,6 @@
 class DigitalClock extends Clock
 {
+  
   int fontSize;
   float x, y;
 

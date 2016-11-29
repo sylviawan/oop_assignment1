@@ -27,6 +27,8 @@ public static float aimY = 400;
 PImage starBG;
 PImage bg2;
 
+radio[] blocks = new radio[18];
+
 Window w;
 radar r;
 aim aimPlanet;
@@ -40,9 +42,6 @@ radar rdr;
 //Attempt on background music
 SoundFile sound;
 
-
-// global variables
-radio[] blocks = new radio[18];
 
 //radio position
 float radposx = 100;

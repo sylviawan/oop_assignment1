@@ -9,6 +9,7 @@ import java.util.*;
 import java.io.FileReader;
 import java.util.concurrent.ThreadLocalRandom;
 import processing.sound.*;
+
 spin Spin;
 
 //classes
@@ -54,11 +55,6 @@ float[] speed_1 = new float[100];
 
 void setup()
 {
-
-  //initializing sound file
-
-  //find a mp3 file which sounds like space music, create a data folder where your project is stored and store the 
-  //mp3 file there, then change the filename.mp3 below to the actual name of the file with the extension
 
   try 
   {
@@ -126,13 +122,13 @@ void setup()
     int r = int(random(0, _info.size()-1));
     planets.add(new Window(planetsImage[index], _info.get(r)));
   }
-  
+
   //sound.play();
 }
 
 void draw()
 {
-  
+
   if (screen == true)
   {
     background(0);
@@ -189,13 +185,13 @@ void mousePressed()
 
   if (screen == true)
   {
-    
+
     float d = dist(546, 525, mouseX, mouseY); //measures if distacnes of mouse is within circle
-    
+
     if (d < 30) 
     {
       planets.clear();
-      
+
       for (int i = 0; i < 5; i++) 
       {
         int index = int(random(planetsImage.length));  // Same as int(random(4)

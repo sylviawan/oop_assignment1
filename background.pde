@@ -51,7 +51,7 @@ class background
     ellipse(width/2, height/2, 230, 230);
 
     fill(255);
-    text("Press SPACE to begin", width/2, height/2);
+    text("Press z to begin", width/2, height/2);
   }
 
 

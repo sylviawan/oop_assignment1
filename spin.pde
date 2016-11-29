@@ -48,5 +48,8 @@ class spin
     ellipse(x, y, 60, 60);
 
     noFill();
+    
+    fill(255);
+    text("Press z to exit", 200, 200);
   }
 }

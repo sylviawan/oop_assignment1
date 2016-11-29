@@ -248,7 +248,7 @@ private void displayingStars()
 
 void keyPressed()
 {
-  if (key == ' ')
+  if (key == 'z')
   {
     screen = !screen;
     println(screen);

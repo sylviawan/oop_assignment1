@@ -1,7 +1,6 @@
 class aim 
 {
 
-
   boolean hover;
 
   void hovering(boolean a)
@@ -47,29 +46,42 @@ class aim
 
   void arrowKeys() {
     stroke(255);
-    if (keyCode == DOWN) {
-      fill(48, 229, 25);
-    } else {
+    if (keyCode == DOWN)
+    {
+      fill(#3148C4);
+    } 
+    else
+    {
       noFill();
     }
     rect(400, 525, 30, 30);
-    if (keyCode == LEFT) {
-      fill(48, 229, 25);
-    } else {
+    if (keyCode == LEFT)
+    {
+      fill(#3148C4);
+    } 
+    else
+    {
       noFill();
     }
     rect(370, 525, 30, 30); 
-    if (keyCode == RIGHT) {
-      fill(48, 229, 25);
-    } else {
+    if (keyCode == RIGHT)
+    {
+      fill(#3148C4);
+    } 
+    else
+    {
       noFill();
     }
     rect(430, 525, 30, 30);  
-    if (keyCode == UP) {
-      fill(48, 229, 25);
-    } else {
+    if (keyCode == UP)
+    {
+      fill(#3148C4);
+    } 
+    else 
+    {
       noFill();
     }
+    
     rect(400, 495, 30, 30); 
     noFill();
   }

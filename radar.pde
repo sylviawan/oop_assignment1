@@ -1,14 +1,14 @@
 class radar {
 
   float speed = 0.01;
-    int trailLength = 50;  
-    float theta = 0;
-    float cx, cy;
-    float radius = 100;
-    
+  int trailLength = 50;  
+  float theta = 0;
+  float cx, cy;
+  float radius = 100;
+
   void miniRadar() 
   {
-    
+
     cx = 900;
     cy = 150;
     smooth();
@@ -29,5 +29,4 @@ class radar {
 
     theta += speed;
   }
-  
 }

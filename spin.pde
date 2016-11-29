@@ -1,5 +1,7 @@
-class spin{
-    float angle1 = 0;
+class spin 
+{
+  
+  float angle1 = 0;
   float angle2 = 0;
   float speed1 = 0.5;
   float speed2 = 1;
@@ -8,8 +10,8 @@ class spin{
   int speedOfSphere = 1;
   float x = 546;
   float y = 525;
-  
-  
+
+
   void circlePiece() 
   {
 
@@ -44,9 +46,7 @@ class spin{
     fill(195, 165, 225);
     noStroke();
     ellipse(x, y, 60, 60);
-    
-      noFill();
-  }
-  
 
+    noFill();
+  }
 }

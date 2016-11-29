@@ -49,15 +49,15 @@ class background
     fill(195, 165, 225);
     noStroke();
     ellipse(width/2, height/2, 230, 230);
-    
+
     fill(255);
-    text("Bish, holla at yo girl", width/2-20, height/2);
+    text("Press SPACE to begin", width/2, height/2);
   }
 
 
   void polygonDesign()
   {
-     //weird moving bar
+    //weird moving bar
     rect(60, 200, 204, 24);
     fill(0);
     int fillX = ((frameCount%301) / 3 * 2);
@@ -103,8 +103,4 @@ class background
     textSize(12);
     text("New constellation", 85, 340);
   }
- 
-     
-  }
-  
-  
+}

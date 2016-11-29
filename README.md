@@ -9,4 +9,8 @@ When you press ‘z’, the game begins. You press the arrows to navigate around
 
 You can also return to the home screen by pressing ‘z’ again.
 
+I have attempted to include sounds but it didn't work out.
+
 YouTube link : https://youtu.be/07G_-jghPNk
+
+** I forgot to add in the video, on the game screen you can change the positions of the planets by clicking the spinning pink button.

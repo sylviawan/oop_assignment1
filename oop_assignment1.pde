@@ -1,4 +1,5 @@
-/* 
+/*
+
  Object Oriented Programming
  DT282/2 Group E
  C15423602 Sylvia Siu Wei Wan
@@ -230,11 +231,13 @@ private void displayingStars()
   strokeWeight(2);
 
   int c = 0;
-  while (c < 100) {
+  while (c < 100)
+  {
     point(x[c], y[c]);
 
     x[c] = x[c] - speed_1[c];
-    if (x[c] < 0) {
+    if (x[c] < 0)
+    {
       x[c] = width;
     }
     c = c + 1;

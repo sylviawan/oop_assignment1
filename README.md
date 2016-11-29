@@ -8,3 +8,5 @@ You are first welcomed by a home screen. In this screen you can change constella
 When you press ‘z’, the game begins. You press the arrows to navigate around the box. When you hover above a planet, descriptions appears and you can also destroy the planets because — why not? 
 
 You can also return to the home screen by pressing ‘z’ again.
+
+YouTube link : https://youtu.be/07G_-jghPNk

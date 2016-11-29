@@ -9,9 +9,28 @@
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import processing.sound.*;
+spin Spin;
 
 //classes
 public ArrayList<Vertex> vertexes = new ArrayList<Vertex>();
+ufferedReader reader;
+String line;
+String[] info;
+ArrayList<String> _info = new ArrayList<String>();
+boolean screen = false;
+
+ArrayList<Window> planets = new ArrayList<Window>();
+PImage[] planetsImage = new PImage[10]; 
+   public static float aimX = 400; // keeps track of the aim
+   public static float aimY = 400;
+      PImage starBG;
+      PImage bg;
+
+Window w;
+radar r;
+aim aimPlanet;
+
+ 
 
 background bg;
 Button btn;
@@ -76,10 +95,52 @@ void setup()
     blocks[i] = new radio(radposx, radposy);
     radposx += 8;
   }
+  
+  
+     Spin = new spin();
+   aimPlanet = new aim();
+   
+   starBG = loadImage("screen.jpg");
+   bg = loadImage("bg.jpg");
+
+   
+       for ( int i = 0; i< 10; i++ ) {
+      planetsImage[i] = loadImage( i + ".png" );
+    }
+    
+      try {
+    BufferedReader br = new BufferedReader(new FileReader("/Users/sylviawan/desktop/sylviaAssignment/planetsInfo.txt"));
+    String line;
+    while ((line = br.readLine()) != null) {
+       _info.add(line);
+    }
+  } catch (IOException e) {
+    System.out.println(e);
+}
 }
 
 void draw()
 {
+  
+       if (screen == true){
+   background(bg);
+   
+     //displays the background for the screen in the middle
+   stroke(255);
+   rect(300, 150, 500, 300);
+   image(starBG, 300, 150, 500, 300);
+   noStroke();
+   
+   Spin.circlePiece();
+   aimPlanet.aimer();  
+
+   
+   for(int i = 0; i <planets.size(); i++){
+     Window part = planets.get(i);
+     part.star();
+   }
+   
+      }else{       
   background(0);
 
 
@@ -108,11 +169,26 @@ void draw()
   
   digitalClock.getTime();
   digitalClock.display();
+      }
 }
 
 void mousePressed()
 {
   btn.button1(1);
+  
+  if (screen == true){
+   float d = dist(546, 525, mouseX, mouseY); //measures if distacnes of mouse is within circle
+   if (d < 30){
+     planets.clear();
+     for (int i = 0; i < 5; i++) {
+    int index = int(random(planetsImage.length));  // Same as int(random(4)
+       int r = int(random(0, _info.size()-1));
+    planets.add(new Window(planetsImage[index], _info.get(r)));
+   }
+ 
+   }
+
+  }
 }
 
 public void connectVertices()
@@ -151,5 +227,12 @@ private void displayingStars()
       x[c] = width;
     }
     c = c + 1;
+  }
+}
+
+ void keyPressed(){
+       if (key == 'z'){
+    screen = !screen;
+    println(screen);
   }
 }

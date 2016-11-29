@@ -7,13 +7,14 @@
 
 
 import java.util.*;
+import java.io.FileReader;
 import java.util.concurrent.ThreadLocalRandom;
 import processing.sound.*;
 spin Spin;
 
 //classes
 public ArrayList<Vertex> vertexes = new ArrayList<Vertex>();
-ufferedReader reader;
+BufferedReader reader;
 String line;
 String[] info;
 ArrayList<String> _info = new ArrayList<String>();
@@ -24,7 +25,7 @@ PImage[] planetsImage = new PImage[10];
    public static float aimX = 400; // keeps track of the aim
    public static float aimY = 400;
       PImage starBG;
-      PImage bg;
+      PImage bg2;
 
 Window w;
 radar r;
@@ -60,6 +61,16 @@ void setup()
   
   //find a mp3 file which sounds like space music, create a data folder where your project is stored and store the 
   //mp3 file there, then change the filename.mp3 below to the actual name of the file with the extension
+  
+  try {
+    BufferedReader br = new BufferedReader(new FileReader("/Users/sylviawan/desktop/sylviaAssignment/planetsInfo.txt"));
+    String line;
+    while ((line = br.readLine()) != null) {
+       _info.add(line);
+    }
+  } catch (IOException e) {
+    System.out.println(e);
+  }
   
   sound = new SoundFile(this, "moon.mp3");
   
@@ -101,34 +112,25 @@ void setup()
    aimPlanet = new aim();
    
    starBG = loadImage("screen.jpg");
-   bg = loadImage("bg.jpg");
+   bg2 = loadImage("bg.jpg");
 
    
        for ( int i = 0; i< 10; i++ ) {
       planetsImage[i] = loadImage( i + ".png" );
     }
     
-      try {
-    BufferedReader br = new BufferedReader(new FileReader("/Users/sylviawan/desktop/sylviaAssignment/planetsInfo.txt"));
-    String line;
-    while ((line = br.readLine()) != null) {
-       _info.add(line);
-    }
-  } catch (IOException e) {
-    System.out.println(e);
-}
 }
 
 void draw()
 {
   
        if (screen == true){
-   background(bg);
+   background(0);
    
      //displays the background for the screen in the middle
    stroke(255);
    rect(300, 150, 500, 300);
-   image(starBG, 300, 150, 500, 300);
+   //image(starBG, 300, 150, 500, 300);
    noStroke();
    
    Spin.circlePiece();

@@ -12,7 +12,7 @@ import processing.sound.*;
 
 spin Spin;
 
-//classes
+
 public ArrayList<Vertex> vertexes = new ArrayList<Vertex>();
 BufferedReader reader;
 String line;
@@ -30,6 +30,7 @@ PImage bg2;
 
 radio[] blocks = new radio[18];
 
+
 Window w;
 radar r;
 aim aimPlanet;
@@ -42,7 +43,6 @@ radar rdr;
 
 //Attempt on background music
 SoundFile sound;
-
 
 //radio position
 float radposx = 100;

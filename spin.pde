@@ -50,6 +50,7 @@ class spin
     noFill();
     
     fill(255);
-    text("Press z to exit", 200, 200);
+    text("Press z to return to home screen", 400, 100);
+    
   }
 }
